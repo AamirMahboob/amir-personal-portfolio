@@ -1,19 +1,15 @@
 import { useTheme } from '@mui/material/styles'
 import { Typography } from '@mui/material'
 import React from 'react'
+import Header from './components/Header'
 
 const App = () => {
   const theme = useTheme()
   return (
-    <div>
-      <Typography  
-        sx={{
-          color: theme.palette.primary.main, // Access the primary color correctly
-        }}
-      >
-          Hello, React! This is a simple React application.
-      </Typography>
-    </div>
+   <>
+     <Header />
+   </>
+  
   )
 }
 
