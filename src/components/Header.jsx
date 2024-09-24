@@ -12,14 +12,15 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { useTheme } from '@mui/material';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['About', 'Work', 'Testimonial','Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const theme =  useTheme()
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -36,12 +37,12 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
-            variant="h6"
+            variant="h3"
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
@@ -55,7 +56,7 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            &lt;AA /&gt; 
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -92,7 +93,7 @@ function Header() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, ml: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -100,7 +101,8 @@ function Header() {
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: 'flex',  md: 'none' },
+              justifyContent: {xs:'flex-end'},
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -109,9 +111,9 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            AA
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', },justifyContent:'flex-end' }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -121,9 +123,11 @@ function Header() {
                 {page}
               </Button>
             ))}
+             
           </Box>
+
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            {/* <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
@@ -149,7 +153,10 @@ function Header() {
                   <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
+            <Button color='contained'>
+              Download CV
+            </Button>
           </Box>
         </Toolbar>
       </Container>

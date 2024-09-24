@@ -1,5 +1,5 @@
 export const colorObject = {
-  main: "#022250",
+  main: "#0a101a",
   dark: "#021733",
   light: "#BABABA",
   contrastText: "#FFFFFF",
