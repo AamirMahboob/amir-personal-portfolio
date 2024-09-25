@@ -3,22 +3,22 @@ import Grid from "@mui/material/Grid2";
 import React from "react";
 import theme from "../theme/theme";
 import { CustomTypo } from "./common/CustomTypo";
+import img from "../assets/img.jpeg";
 
 const Hero = () => {
   const theme = useTheme();
   return (
     <Container
-      maxWidth="lg"
+    maxWidth="xxl"
       sx={{
         height: "70vh",
         backgroundColor: theme.palette.primary.main,
         display: "flex",
         alignItems: "center",
-          width: '100%'
       }}
     >
-      <Grid container     spacing={5}   >
-        <Grid size={6} >
+      <Grid container spacing={5}>
+        <Grid size={8}   >
           <Stack spacing={2}>
             <CustomTypo variant="h1" fontWidth={500} color="white">
               Hi, I'm Aamir 👋
@@ -38,11 +38,44 @@ const Hero = () => {
             </CustomTypo>
           </Stack>
         </Grid>
-        <Grid size={6}>
-          <CustomTypo variant="h1" fontWidth={500} color="white">
-            Hi, I'm Aamir 👋
-          </CustomTypo>
-        </Grid>
+        <Grid size={4} >
+          
+          <Box sx={{ position: "relative", width: "100%" }}>
+ 
+  <Box
+    sx={{
+      position: "relative",
+      backgroundColor: "white",
+      width: "300px",
+      height: "300px",
+      border: "10px solid black",
+      zIndex: 2,  // Ensure the image is on top
+      
+    }}
+  >
+    <img
+      src={img}
+      alt="Profile"
+      style={{ width: "100%", height: "100%", }}
+    />
+  </Box>
+
+  {/* Border Box */}
+  <Box
+    sx={{
+      position: "absolute",
+      top: 40,
+      left: 40,
+      width: "300px",
+      height: "300px",
+      backgroundColor: "#374151",
+      border: "5px solid #374151",  // The black border
+      zIndex: 1,  // This should be behind the image
+    }}
+  ></Box>
+</Box>
+
+      </Grid>
       </Grid>
     </Container>
   );
