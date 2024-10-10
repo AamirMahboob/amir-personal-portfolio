@@ -1,11 +1,11 @@
 export const colorObject = {
   main: "#0a101a",
-  dark: "#021733",
+  dark: "#111827",
   light: "#BABABA",
   contrastText: "#FFFFFF",
   textColor: "#111111",
 };
-
+// 111827
 const customPrimaryColors = {
   main: colorObject.main,
   dark: colorObject.dark,

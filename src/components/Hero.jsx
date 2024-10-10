@@ -18,7 +18,7 @@ const Hero = () => {
       }}
     >
       <Grid container spacing={5}>
-        <Grid size={8}   >
+        <Grid size={{ xs: 12, sm: 12 , md:8 }}   >
           <Stack spacing={2}>
             <CustomTypo variant="h1" fontWidth={500} color="white">
               Hi, I'm Aamir 👋
@@ -38,7 +38,7 @@ const Hero = () => {
             </CustomTypo>
           </Stack>
         </Grid>
-        <Grid size={4} >
+        <Grid size={{ xs: 12, sm: 12 , md:4 }} >
           
           <Box sx={{ position: "relative", width: "100%" }}>
  

@@ -20,6 +20,8 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [scrolling,setScrolling]=React.useState(false);
+  
   const theme =  useTheme()
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -35,9 +37,30 @@ function Header() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
-    <AppBar position="static" >
+    <AppBar  position="fixed" // Changed from static to fixed
+    sx={{
+      backgroundColor: scrolling ? theme.palette.primary.main : 'transparent',
+      transition: 'background-color 0.3s ease-in-out',
+      boxShadow: scrolling ? theme.shadows[4] : 'none',
+      borderBottom: scrolling && "1px solid transparent", 
+    }} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
