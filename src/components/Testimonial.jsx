@@ -11,8 +11,8 @@ const Testimonial = () => {
     <Container
       maxWidth="xxl"
       sx={{
-        backgroundColor: "red",
-         padding:'10px',
+        backgroundColor: "#111827",
+         paddingY:'70px',
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -42,9 +42,9 @@ const Testimonial = () => {
           }}
           color="white"
         >
-          Get in Touch
+          Testimonials
         </CustomTypo>
-        <CustomTypo sx={{ marginTop: 1, textAlign: "center" }}>
+        <CustomTypo color="white" sx={{ marginTop: 3, textAlign: "center" }}>
           Nice things people have said about me:
         </CustomTypo>
       </Box>
@@ -58,6 +58,7 @@ const Testimonial = () => {
       }}>
         
        
+         
         <Box sx={{
             display:'flex',
             flexDirection:'column',
@@ -66,42 +67,13 @@ const Testimonial = () => {
             width:'100%',
             marginTop: 3,
             border:'1px solid black',
-            paddingY:"40px",
-            borderRadius: "10px",
-
-        }}>
-          <img
-            src={img}
-            alt=""
-            width={80}
-            height={80}
-            style={{ borderRadius: "100%" }}
-
-          />
-          <CustomTypo variant="h5" sx={{ marginTop: 2, marginBottom: 2,textAlign:'center' }}>
-            "Job well done! I am really impressed. He is very very good at what
-            he does:) I would recommend Sagar and will rehire in the future for
-            Frontend development."
-          </CustomTypo>
-          <CustomTypo variant="h6" sx={{ marginTop: 1, marginBottom: 2 }}>
-          Krisztian Gyuris
-          </CustomTypo>
-          <CustomTypo variant="h6" sx={{ marginTop: 1, marginBottom: 2 }}>
-            Frontend Developer
-          </CustomTypo>
-        </Box>
-        <Box sx={{
-            display:'flex',
-            flexDirection:'column',
-            justifyContent:'center',
-            alignItems:'center',
-            width:'100%',
-            marginTop: 3,
-            border:'1px solid black',
-            paddingY:"40px",
+            paddingY:"80px",
+            paddingX:"20px",
+            gap:2,
             borderRadius: "10px",
             backgroundColor:'#1f2937',
-            boxShadow:theme.shadows[4]
+            boxShadow:theme.shadows[4],
+             
         }}>
           <img
             src={img}
@@ -116,12 +88,11 @@ const Testimonial = () => {
             he does:) I would recommend Sagar and will rehire in the future for
             Frontend development."
           </CustomTypo>
-          <CustomTypo color="white" variant="h6" sx={{ marginTop: 1, marginBottom: 2 }}>
-          Krisztian Gyuris
+          <CustomTypo color="white" variant="h6" sx={{ marginTop: 1, marginBottom: 2,textAlign:'center'  }}>
+          Krisztian Gyuris <br/>
+          Frontend Developer
           </CustomTypo>
-          <CustomTypo color="white" variant="h6" sx={{ marginTop: 1, marginBottom: 2 }}>
-            Frontend Developer
-          </CustomTypo>
+          
         </Box>
         <Box sx={{
             display:'flex',
@@ -131,10 +102,13 @@ const Testimonial = () => {
             width:'100%',
             marginTop: 3,
             border:'1px solid black',
-            paddingY:"40px",
+            paddingY:"80px",
+            paddingX:"20px",
+            gap:2,
             borderRadius: "10px",
-
-
+            backgroundColor:'#1f2937',
+            boxShadow:theme.shadows[4],
+             
         }}>
           <img
             src={img}
@@ -142,19 +116,53 @@ const Testimonial = () => {
             width={80}
             height={80}
             style={{ borderRadius: "100%" }}
-
+            
           />
-          <CustomTypo variant="h5" sx={{ marginTop: 2, marginBottom: 2,textAlign:'center' }}>
+          <CustomTypo color="white" variant="h5" sx={{ marginTop: 2, marginBottom: 2,textAlign:'center' }}>
             "Job well done! I am really impressed. He is very very good at what
             he does:) I would recommend Sagar and will rehire in the future for
             Frontend development."
           </CustomTypo>
-          <CustomTypo variant="h6" sx={{ marginTop: 1, marginBottom: 2 }}>
-          Krisztian Gyuris
+          <CustomTypo color="white" variant="h6" sx={{ marginTop: 1, marginBottom: 2,textAlign:'center'  }}>
+          Krisztian Gyuris <br/>
+          Frontend Developer
           </CustomTypo>
-          <CustomTypo variant="h6" sx={{ marginTop: 1, marginBottom: 2 }}>
-            Frontend Developer
+          
+        </Box>
+        <Box sx={{
+            display:'flex',
+            flexDirection:'column',
+            justifyContent:'center',
+            alignItems:'center',
+            width:'100%',
+            marginTop: 3,
+            border:'1px solid black',
+            paddingY:"80px",
+            paddingX:"20px",
+            gap:2,
+            borderRadius: "10px",
+            backgroundColor:'#1f2937',
+            boxShadow:theme.shadows[4],
+             
+        }}>
+          <img
+            src={img}
+            alt=""
+            width={80}
+            height={80}
+            style={{ borderRadius: "100%" }}
+            
+          />
+          <CustomTypo color="white" variant="h5" sx={{ marginTop: 2, marginBottom: 2,textAlign:'center' }}>
+            "Job well done! I am really impressed. He is very very good at what
+            he does:) I would recommend Sagar and will rehire in the future for
+            Frontend development."
           </CustomTypo>
+          <CustomTypo color="white" variant="h6" sx={{ marginTop: 1, marginBottom: 2,textAlign:'center'  }}>
+          Krisztian Gyuris <br/>
+          Frontend Developer
+          </CustomTypo>
+          
         </Box>
       </Box>
     </Container>
