@@ -7,6 +7,7 @@ import Aboutme from './components/Aboutme'
 import Footer from './components/Footer'
 import Skills from './components/Skills'
 import Testimonial from './components/Testimonial'
+import Projects from './components/Projects'
 
 const App = () => {
   const theme = useTheme()
@@ -16,6 +17,7 @@ const App = () => {
      <Hero />
      {/* <Aboutme /> */}
      {/* <Skills /> */}
+     <Projects />
      <Testimonial />
      <Footer />
    </>
