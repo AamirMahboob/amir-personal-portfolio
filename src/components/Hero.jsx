@@ -16,6 +16,7 @@ const Hero = () => {
         display: "flex",
         alignItems: "center",
       }}
+      id="hero"
     >
       <Grid container spacing={5}>
         <Grid size={{ xs: 12, sm: 12 , md:8 }}   >
@@ -28,10 +29,10 @@ const Hero = () => {
               creating (and occasionally designing) exceptional digital
               experiences that are fast, accessible, visually appealing, and
               responsive. Even though I have been creating web applications for
-              over 7 years, I still love it as if it was something new.
+              over 2 years, I still love it as if it was something new.
             </CustomTypo>
             <CustomTypo variant="h5" fontWidth={500} color="white">
-              Ahmedabad, India
+              Islamabad, Pakistan
             </CustomTypo>
             <CustomTypo variant="h5" fontWidth={500} color="white">
               Available for new projects

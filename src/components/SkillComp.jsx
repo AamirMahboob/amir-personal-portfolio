@@ -13,8 +13,10 @@ const SkillComp = ({title}) => {
             borderRadius: "20px",
             marginTop: 2,
             width: "10em",
+            fontWeight:'200'
           }}
           color="white"
+
         >
           {title}
         </CustomTypo>

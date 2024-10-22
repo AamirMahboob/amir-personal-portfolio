@@ -16,6 +16,7 @@ const Aboutme = () => {
         alignItems: "center",
         justifyContent:'center',
       }}
+      id="about"
     >
      
       <Grid container spacing={2}  >

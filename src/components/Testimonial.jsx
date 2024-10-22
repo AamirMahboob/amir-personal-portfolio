@@ -10,6 +10,7 @@ const Testimonial = () => {
   return (
     <Container
       maxWidth="xxl"
+      id="testimonials"
       sx={{
         backgroundColor: "#111827",
          paddingY:'70px',
@@ -18,6 +19,7 @@ const Testimonial = () => {
         justifyContent: "center",
         
       }}
+      
     >
       <Box
         sx={{

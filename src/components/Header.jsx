@@ -7,36 +7,32 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { useTheme } from '@mui/material';
 
-const pages = ['About', 'Work', 'Testimonial','Contact'];
+const pages = [
+  { name: 'About', link: '#about' },
+  { name: 'Work', link: '#projects' },
+  { name: 'Testimonials', link: '#testimonials' },
+  { name: 'Contact', link: '#footer' }
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [scrolling,setScrolling]=React.useState(false);
+  const [scrolling, setScrolling] = React.useState(false);
+
+  const theme = useTheme(); // Ensure ThemeProvider wraps this component
   
-  const theme =  useTheme()
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
   React.useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -52,18 +48,18 @@ function Header() {
     };
   }, []);
 
-
   return (
-    <AppBar  position="fixed" // Changed from static to fixed
-    sx={{
-      backgroundColor: scrolling ? theme.palette.primary.main : 'transparent',
-      transition: 'background-color 0.3s ease-in-out',
-      boxShadow: scrolling ? theme.shadows[4] : 'none',
-      borderBottom: scrolling && "1px solid transparent", 
-    }} >
+    <AppBar 
+      position="fixed"
+      sx={{
+        backgroundColor: scrolling ? theme.palette.primary.main : 'transparent',
+        transition: 'background-color 0.3s ease-in-out',
+        boxShadow: scrolling ? theme.shadows[4] : 'none',
+        borderBottom: scrolling && "1px solid transparent"
+      }} 
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h3"
             noWrap
@@ -109,14 +105,14 @@ function Header() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+              {pages.map(({ name, link }) => (
+                <MenuItem key={name} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, ml: 1 }} /> */}
+
           <Typography
             variant="h5"
             noWrap
@@ -125,7 +121,7 @@ function Header() {
             sx={{
               mr: 2,
               display: { xs: 'flex',  md: 'none' },
-              justifyContent: {xs:'flex-end'},
+              justifyContent: 'flex-end',
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -136,48 +132,22 @@ function Header() {
           >
             AA
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', },justifyContent:'flex-end' }}>
-            {pages.map((page) => (
+          
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+            {pages.map(({ name, link }) => (
               <Button
-                key={page}
+                key={name}
+                href={link}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {name}
               </Button>
             ))}
-             
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {/* <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu> */}
-            <Button color='contained'>
+            <Button variant="contained">
               Download CV
             </Button>
           </Box>
@@ -186,4 +156,5 @@ function Header() {
     </AppBar>
   );
 }
+
 export default Header;
