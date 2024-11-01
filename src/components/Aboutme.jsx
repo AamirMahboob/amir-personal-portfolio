@@ -21,7 +21,7 @@ const Aboutme = () => {
       }}
       id="about"
     >
-        <CustomTypo
+      <CustomTypo
           variant="h6"
           sx={{
             backgroundColor: "#374151",
@@ -34,8 +34,18 @@ const Aboutme = () => {
           }}
           color="white"
         >
-          Testimonials
+           About me
         </CustomTypo>
+      <Box
+       sx={{
+        [theme.breakpoints.up('md')]: {
+           marginX:'100px'
+        },
+
+
+      }}
+      > 
+        
       <Grid container spacing={2}  >
         
         <Grid size={{ xs: 12, md: 6 }} sx={{display:"flex",alignItems:'center',justifyContent:"center"}}  >
@@ -91,6 +101,7 @@ Aspiring indie hacker</CustomTypo>
 
         </Grid>
       </Grid>
+      </Box>
     </Container>
   );
 };
