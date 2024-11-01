@@ -45,8 +45,8 @@ const App = () => {
   return (
     <>
       
-      <SignIn />
-      {/* <Header />
+      {/* <SignIn /> */}
+      <Header />
        
         <Hero />
      
@@ -59,7 +59,7 @@ const App = () => {
      
         <Testimonial />
       
-      <Footer /> */}
+      <Footer />
     </>
   )
 }
