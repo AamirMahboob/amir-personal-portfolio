@@ -19,6 +19,15 @@ const Hero = () => {
       }}
       id="hero"
     >
+      <Box
+       sx={{
+        [theme.breakpoints.up('md')]: {
+           marginX:'100px'
+        },
+
+
+      }}
+      >
       <Grid container spacing={5}>
         <Grid size={{ xs: 12, sm: 12 , md:8 }}   >
           <Stack spacing={2}>
@@ -87,6 +96,7 @@ const Hero = () => {
 
       </Grid>
       </Grid>
+      </Box>
     </Container>
   );
 };
