@@ -4,7 +4,8 @@ import React from "react";
 import theme from "../theme/theme";
 import { CustomTypo } from "./common/CustomTypo";
 import img from "../assets/img.jpeg";
-
+import { Typewriter } from 'react-simple-typewriter';
+import '../index.css'
 const Hero = () => {
   const theme = useTheme();
   return (
@@ -22,7 +23,15 @@ const Hero = () => {
         <Grid size={{ xs: 12, sm: 12 , md:8 }}   >
           <Stack spacing={2}>
             <CustomTypo variant="h1" fontWidth={500} color="white">
-              Hi, I'm Aamir 👋
+                <Typewriter
+              words={["Hi, I'm Aamir 👋"]}
+              loop={0} // Set to `0` for infinite loop
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
             </CustomTypo>
             <CustomTypo variant="h5" fontWidth={500} color="white">
               I'm a full stack developer (React.js & Node.js) with a focus on
@@ -51,7 +60,7 @@ const Hero = () => {
       height: "300px",
       border: "10px solid black",
       zIndex: 2,  // Ensure the image is on top
-      
+      animation: "borderAnimation 3s infinite linear",
     }}
   >
     <img

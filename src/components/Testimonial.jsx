@@ -57,6 +57,9 @@ const Testimonial = () => {
         width: "100%",
         marginTop: 3,
         gap: 4,
+        [theme.breakpoints.down('md')]: {
+          flexDirection:"column" // Changes to red on medium screens and up
+        },
       }}>
         
        

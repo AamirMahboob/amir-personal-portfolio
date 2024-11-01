@@ -48,7 +48,7 @@ const Footer = () => {
       </Tooltip>
           </CustomTypo>
           <CustomTypo variant="h5" sx={{textAlign:"center"}}    color="white">
-          +91 8980500565
+          +92 3159142436
           </CustomTypo>
           </Stack>
           <Stack marginTop={3} spacing={1}>

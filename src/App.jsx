@@ -36,25 +36,30 @@ import Skills from './components/Skills'
 import Testimonial from './components/Testimonial'
 import Projects from './components/Projects'
 import SkillsSection from './components/SkillsSection'
+import Experience from './components/Experience'
+import SignIn from './admin/signin'
 
 const App = () => {
   const theme = useTheme()
 
   return (
     <>
-      <Header />
+      
+      <SignIn />
+      {/* <Header />
        
         <Hero />
      
        
         <Aboutme />
+        <Experience />
         <SkillsSection />
  
         <Projects /> 
      
         <Testimonial />
       
-      <Footer />
+      <Footer /> */}
     </>
   )
 }

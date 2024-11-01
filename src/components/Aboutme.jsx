@@ -10,16 +10,34 @@ const Aboutme = () => {
     <Container
       maxWidth="xxl"
       sx={{
-        height: "100vh",
+        height: "auto",
         backgroundColor: theme.palette.secondary.dark,
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent:'center',
+        paddingY: "60px",
+        gap: 5
       }}
       id="about"
     >
-     
+        <CustomTypo
+          variant="h6"
+          sx={{
+            backgroundColor: "#374151",
+            textAlign: "center",
+            paddingX: "20px",
+            paddingY: "6px",
+            borderRadius: "20px",
+            marginTop: 2,
+            width: "10em",
+          }}
+          color="white"
+        >
+          Testimonials
+        </CustomTypo>
       <Grid container spacing={2}  >
+        
         <Grid size={{ xs: 12, md: 6 }} sx={{display:"flex",alignItems:'center',justifyContent:"center"}}  >
           <Box sx={{ position: "relative", width: "350px", height: "350px",   }}>
             <Box
