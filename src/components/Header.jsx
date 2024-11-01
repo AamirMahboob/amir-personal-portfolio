@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { useTheme } from '@mui/material';
-
+import amircv from '../../public/CV.pdf'
 const pages = [
   { name: 'About', link: '#about' },
   { name: 'Work', link: '#projects' },
@@ -59,6 +59,15 @@ function Header() {
       }} 
     >
       <Container maxWidth="xl">
+        <Box 
+          sx={{
+            [theme.breakpoints.up('md')]: {
+               marginX:'100px'
+            },
+
+
+          }}
+        >
         <Toolbar disableGutters>
           <Typography
             variant="h3"
@@ -147,11 +156,15 @@ function Header() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
+            <a href="/CV.pdf" download="amircv.pdf" target='blank' >
             <Button variant="contained">
               Download CV
             </Button>
+            </a>
+            
           </Box>
         </Toolbar>
+        </Box>
       </Container>
     </AppBar>
   );
