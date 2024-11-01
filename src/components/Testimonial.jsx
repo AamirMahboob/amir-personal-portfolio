@@ -23,12 +23,22 @@ const Testimonial = () => {
     >
       <Box
         sx={{
+          [theme.breakpoints.up('md')]: {
+             marginX:'100px'
+          },
+
+
+        }}
+      > 
+      <Box
+        sx={{
           display: "flex",
           flexDirection: "column",
           alignContent: "center",
           alignItems: "center",
           width: "100%",
           margin: 3,
+          
         }}
       >
         <CustomTypo
@@ -169,6 +179,7 @@ const Testimonial = () => {
           </CustomTypo>
           
         </Box>
+      </Box>
       </Box>
     </Container>
   );
