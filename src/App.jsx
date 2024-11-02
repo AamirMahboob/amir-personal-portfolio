@@ -1,67 +1,42 @@
-// import { useTheme } from '@mui/material/styles'
-// import { Typography } from '@mui/material'
-// import React from 'react'
-// import Header from './components/Header'
-// import Hero from './components/Hero'
-// import Aboutme from './components/Aboutme'
-// import Footer from './components/Footer'
-// import Skills from './components/Skills'
-// import Testimonial from './components/Testimonial'
-// import Projects from './components/Projects'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-// const App = () => {
-//   const theme = useTheme()
-//   return (
-//    <>
-//      <Header />
-//      <Hero />
-//      {/* <Aboutme /> */}
-//      {/* <Skills /> */}
-//      <Projects />
-//      <Testimonial />
-//      <Footer />
-//    </>
-  
-//   )
-// }
+import Client from './client/client';
+import AdminLayout from './layouts/AdminLayout';
+import Dashboard from './admin/dashboard';
+import Testimonial from './components/Testimonial';
+import AdminTestemoinal from './admin/AdminTestimonial';
+import Signin from './admin/signin';
 
-// export default App
-import { useTheme } from '@mui/material/styles'
-import React from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Aboutme from './components/Aboutme'
-import Footer from './components/Footer'
-import Skills from './components/Skills'
-import Testimonial from './components/Testimonial'
-import Projects from './components/Projects'
-import SkillsSection from './components/SkillsSection'
-import Experience from './components/Experience'
-import SignIn from './admin/signin'
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Client />,  // Main website page
+  },
+  {
+    path: '/admin/signin',  // `/admin/signin`
+    element: <Signin />,  // Admin sign-in page
+  },
+  {
+    path: '/admin',
+    element: <AdminLayout />,  
+    children: [
+      {
+        path: 'dashboard',    
+        element: <Dashboard />,
+      },
+      {
+        path: 'settings',  // `/admin/settings`
+        element: <AdminTestemoinal />,
+      },
+      // Add more child routes for other sections as needed
+    ],
+  }
+]);
 
-const App = () => {
-  const theme = useTheme()
+const App = () => (
+  <RouterProvider router={router} />
+);
 
-  return (
-    <>
-      
-      {/* <SignIn /> */}
-      <Header />
-       
-        <Hero />
-     
-       
-        <Aboutme />
-        <Experience />
-        <SkillsSection />
- 
-        <Projects /> 
-     
-        <Testimonial />
-      
-      <Footer />
-    </>
-  )
-}
-
-export default App
+export default App;

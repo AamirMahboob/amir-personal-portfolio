@@ -15,7 +15,10 @@ const pages = [
   { name: 'About', link: '#about' },
   { name: 'Work', link: '#projects' },
   { name: 'Testimonials', link: '#testimonials' },
-  { name: 'Contact', link: '#footer' }
+  { name: 'Contact', link: '#footer' },
+  { name: 'Signin', link: '/admin/signin' }
+
+
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 

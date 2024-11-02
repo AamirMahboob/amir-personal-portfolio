@@ -43,7 +43,7 @@ function ColorSchemeToggle(props) {
   );
 }
 
-export default function SignIn() {
+export default function Signin() {
 //   const Navigate = useNavigate();
   return (
     <CssVarsProvider defaultMode="dark" disableTransitionOnChange>
