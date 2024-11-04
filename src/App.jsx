@@ -8,6 +8,9 @@ import Dashboard from './admin/dashboard';
 import Testimonial from './components/Testimonial';
 import AdminTestemoinal from './admin/AdminTestimonial';
 import Signin from './admin/signin';
+import AdminHero from './admin/AdminHero';
+import AdminSkills from './admin/skills';
+import Aboutme from './admin/Aboutme';
 
 const router = createBrowserRouter([
   {
@@ -27,10 +30,21 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: 'settings',  // `/admin/settings`
+        path: 'hero',  
+        element: <AdminHero />,
+      },
+      {
+        path: 'admintestimonial',   
         element: <AdminTestemoinal />,
       },
-      // Add more child routes for other sections as needed
+      {
+        path: 'skills',  // `/admin/settings`
+        element: <AdminSkills />,
+      },
+      {
+        path: 'aboutme',  // `/admin/settings`
+        element: <Aboutme />,
+      },
     ],
   }
 ]);
