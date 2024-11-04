@@ -44,7 +44,7 @@ function ColorSchemeToggle(props) {
 }
 
 export default function Signin() {
-//   const Navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <CssVarsProvider defaultMode="dark" disableTransitionOnChange>
       <CssBaseline />
@@ -185,7 +185,7 @@ export default function Signin() {
                     </Link>
                   </Box>
                   <Button
-                    
+                    onClick={()=>navigate('/admin/dashboard')} 
                   >
                     Sign in
                   </Button>
