@@ -1,6 +1,6 @@
 // AdminLayout.js
 import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { AppBar, Box, CssBaseline, Toolbar, Typography, IconButton, useTheme } from "@mui/material";
 import Sidebar from "../components/admincomponents/Sidebar";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -10,6 +10,9 @@ const drawerWidth = 240;
 const AdminLayout = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
   const theme = useTheme();
+  const location = useLocation();
+  
+  console.log(location.pathname,"location")
 
   const handleDrawerToggle = () => {
     setOpenSideBar(!openSideBar);
@@ -25,6 +28,7 @@ const AdminLayout = () => {
         sx={{
           width: { md: `calc(100% - ${drawerWidth}px)`, xs: "100%" },
           ml: { md: `${drawerWidth}px` },
+          backgroundColor:'#1f2937',
         }}
       >
         <Toolbar>
@@ -57,6 +61,7 @@ const AdminLayout = () => {
           bgcolor: "background.default",
           p: 3,
           width: { md: `calc(100% - ${drawerWidth}px)`, xs: "100%" },
+          
         }}
       >
         <Toolbar />  
