@@ -11,9 +11,9 @@ export const heroSchema = Yup.object({
     .max(200, "Description cannot be more than 200 characters long")
     .required("Description is required"),
     
-  // image: Yup.string()
-  //   .url("Image must be a valid URL")
-  //   .required("Image is required"),
+  image: Yup.string()
+    .url("Image must be a valid URL")
+    .required("Image is required"),
     
   state: Yup.string()
     .min(2, "State must be at least 2 characters long")
