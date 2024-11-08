@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Container from "@mui/material/Container";
 
 const AdminSkills = () => {
   return (
-    <div>asbdbjashbd</div>
-  )
-}
+    <Container maxWidth="lg">
+      <Box>Skills</Box>
+      
+    </Container>
+  );
+};
 
-export default AdminSkills
+export default AdminSkills;
